@@ -1,1 +1,1 @@
-졸프
+DetectLang
