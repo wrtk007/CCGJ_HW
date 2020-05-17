@@ -1,8 +1,8 @@
-koex = "힣힣 한국어 테스트"
-jpex = "こんにちは"
-arex = "أحبك"
+koex = "힣힣 한국어 테스트 힣힣 한국어 테스트"
+jpex = "こんにちはこんにちはこんにちは"
+arex = "أحبكأحبكأحبكأحبكأحبك"
 enex = "English test xoxo"
-deex = "kaufen"
+deex = "kaufen Koenig Deutschland"
 
 #ord는 char가 무슨 ascii 코드인지 알려줌
 #python은 아스키 코드 베이스
@@ -12,14 +12,19 @@ def detectAscii(comment) :
         print(comment[i])
         return ord(comment[i])
 
+#이모지 제거
+#글자 최대 20자만 분석
+#string으로 받도록
+#분석한 문자가 50% 이상 차지한 문자로 분석 
+# ex)I love 방탄 -> 영어:4/7 한글:2/7 : 영어
+
 #utf-8로 encode
 """def detectutf(comment) :
     uni_no = comment.encode("utf-8")
     return uni_no
 """
 
-#utf-8이 어떤 문자에 속하는지
-#utf-8로 나온 숫자의 범위로?
+#ascii 코드 값에 따라 문자 분류
 def detectLang(uni_no) :
     if ((65 <= uni_no <= 90) or (97 <= uni_no <= 122)) :
         print("Latin 문자") 
@@ -37,7 +42,6 @@ en = detectAscii(enex)
 de = detectAscii(deex)
 jp = detectAscii(jpex)
 ar = detectAscii(arex)
-
 
 print("한국어 예시 : " + koex + "  한국어 첫 글자 " + str(ko),end="  ")
 detectLang(ko)
