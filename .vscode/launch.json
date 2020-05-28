@@ -1,0 +1,11 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - time",
+            "request": "launch",
+            "mainClass": "time",
+            "projectName": "CCGJ_HW_e10d3fa8"
+        }
+    ]
+}
